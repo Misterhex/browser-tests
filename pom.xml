@@ -9,9 +9,8 @@
     <name>Cucumber-Java Skeleton</name>
 
     <properties>
-        <java.version>1.7</java.version>
-        <junit.version>4.12</junit.version>
-        <cucumber.version>2.0.1</cucumber.version>
+        <java.version>1.8</java.version>
+        <cucumber.version>2.0.0</cucumber.version>
         <maven.compiler.version>3.3</maven.compiler.version>
     </properties>
 
@@ -31,27 +30,17 @@
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.4.0</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.5.3</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-remote-driver</artifactId>
-            <version>RELEASE</version>
         </dependency>
 
     </dependencies>
@@ -64,11 +53,12 @@
                 <version>${maven.compiler.version}</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArgument>-Werror</compilerArgument>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>

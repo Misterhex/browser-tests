@@ -1,17 +1,27 @@
 package skeleton;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.net.MalformedURLException;
-import java.net.URL;
+public final class WebDriverFactory {
 
-public class WebDriverFactory implements IWebDriverFactory {
+    private static final String HUB_URL = "HUB_URL";
 
-    @Override
-    public WebDriver Create() throws MalformedURLException {
-        RemoteWebDriver remoteWebDriver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.chrome());
-        return remoteWebDriver;
+    public static WebDriver CreateNew() throws MalformedURLException {
+
+        String browser = System.getProperty("browser", "chrome");
+
+        DesiredCapabilities cap = DesiredCapabilities.chrome();
+
+        RemoteWebDriver driver =  new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"),cap);
+
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+
+        return driver;
     }
 }
