@@ -7,14 +7,10 @@ pipeline:
     image: maven:3.5.0-jdk-8-alpine
     commands:
       - mvn clean
-  volumes:
-    - /root/.m2:/root/.m2
   test:
     image: maven:3.5.0-jdk-8-alpine
     commands:
       - mvn test
-  volumes:
-    - /root/.m2:/root/.m2
 
 services:
   selenium:
