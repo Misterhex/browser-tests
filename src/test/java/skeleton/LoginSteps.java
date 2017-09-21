@@ -1,7 +1,6 @@
 package skeleton;
 
 import cucumber.api.java.After;
-import cucumber.api.java.bs.A;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -9,7 +8,6 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,7 +27,7 @@ public class LoginSteps {
     public void I_am_on_Acqo_login_page() {
 
         driver.manage().window().maximize();
-        
+
         driver.get(AcqoSite.toString());
     }
 
