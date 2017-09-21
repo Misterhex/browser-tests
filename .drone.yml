@@ -1,10 +1,16 @@
 pipeline:
-  build:
+  info:
     image: maven:3.5.0-jdk-8-alpine
     commands:
-      - ifconfig
       - mvn -v
-      - mvn clean test
+  clean:
+    image: maven:3.5.0-jdk-8-alpine
+    commands:
+      - mvn clean
+  test:
+    image: maven:3.5.0-jdk-8-alpine
+    commands:
+      - mvn test
 
 services:
   selenium:
