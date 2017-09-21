@@ -1,0 +1,10 @@
+pipeline:
+  build:
+    image: 3.5.0-jdk-8-alpine
+    commands:
+      - mvn -v
+      - mvn clean test
+
+services:
+  selenium:
+    image: selenium/standalone-chrome
