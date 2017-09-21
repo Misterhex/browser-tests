@@ -6,7 +6,7 @@ pipeline:
       - mvn -v
       - mvn clean test
   volumes:
-    - "$HOME/.m2":/root/.m2
+    - /root/.m2:/root/.m2
 
 services:
   selenium:
