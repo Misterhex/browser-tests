@@ -5,8 +5,7 @@ pipeline:
       - ifconfig
       - mvn -v
       - mvn clean test
-  volumes:
-    - /root/.m2:/root/.m2
+  volumes: [ /root/.m2:/root/.m2 ]
 
 services:
   selenium:
